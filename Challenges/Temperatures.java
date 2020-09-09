@@ -5,33 +5,30 @@ public class Temperatures {
 	public static void main( String [] args ) {
 		
 		Scanner input = new Scanner( System.in );
-
-		int sun;
-		int mon;
-		int tue;
-		int wed;
-		int thr;
-		int fri;
-		int sat;
+		int [] temps = new int[ 7 ];
 
 		try {
 			System.out.print( "\nWhat is the temperature on Sunday? " );
-			sun = input.nextInt();
+			temps[ 0 ] = input.nextInt();
 			System.out.print( "\nWhat is the temperature on Monday? " );
-			mon = input.nextInt();
+			temps[ 1 ] = input.nextInt();
 			System.out.print( "\nWhat is the temperature on Tuesday? " );
-			tue = input.nextInt();
+			temps[ 2 ] = input.nextInt();
 			System.out.print( "\nWhat is the temperature on Wednesday? " );
-			wed = input.nextInt();
+			temps[ 3 ] = input.nextInt();
 			System.out.print( "\nWhat is the temperature on Thursday? " );
-			thr = input.nextInt();
+			temps[ 4 ] = input.nextInt();
 			System.out.print( "\nWhat is the temperature on Friday? " );
-			fri = input.nextInt();
+			temps[ 5 ] = input.nextInt();
 			System.out.print( "\nWhat is the temperature on Saturday? " );
-			sat = input.nextInt();
+			temps[ 6 ] = input.nextInt();
 
 			System.out.printf( "\n%-15s %-15s %-15s %-15s %-15s %-15s %-15s \n", "Sun", "Mon", "Tues", "Wed", "Thur", "Fri", "Sat" );
-			System.out.printf( "\n%-15d %-15d %-15d %-15d %-15d %-15d %-15d \n", sun, mon, tue, wed, thr, fri, sat );
+			System.out.printf( "\n%-15d %-15d %-15d %-15d %-15d %-15d %-15d \n", temps[ 0 ], temps[ 1 ], temps[ 2 ], temps[ 3 ], temps[ 4 ], temps[ 5 ], temps[ 6 ] );
+			
+			double average = ( temps[ 0 ] + temps[ 1 ] + temps[ 2 ] + temps[ 3 ] + temps[ 4 ] + temps[ 5 ] + temps[ 6 ]) / 7.0;
+
+			System.out.println( "Average: " + average );
 
 		}
 		catch( InputMismatchException e ) {
