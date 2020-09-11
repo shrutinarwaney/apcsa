@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Temperatures {
+public class WeekTemp {
 
 	public static void main( String [] args ) {
 		
