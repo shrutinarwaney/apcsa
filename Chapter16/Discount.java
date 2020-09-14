@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Discount{
+public class Discount {
 
 	public static void main( String [] args ) {
 			
@@ -8,7 +8,7 @@ public class Discount{
 
 		System.out.print( "Enter amount of purchases: " );
 		int amount = input.nextInt();
-		if( amount > 1000 ) { System.out.println( "Discounted price: " + ( 0.9 * amount ) ); }
+		if( amount > 1000 ) { System.out.println( "Discounted price: " + ( int )( 0.9 * amount ) ); }
 		else { System.out.println( "No discount. Amount: " + amount ); }
 
 	}
