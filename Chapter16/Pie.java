@@ -8,8 +8,6 @@ public class Pie {
 
 		System.out.print( "Enter pie weight: " );
 		int weight = input.nextInt();
-
-		// String result = ( weight > 220 && weight < 280 ) ? "Within weight" : "Not within weight";
 		System.out.println( ( weight > 220 && weight < 280 ) ? "Within weight" : "Not within weight" );
 
 	}
