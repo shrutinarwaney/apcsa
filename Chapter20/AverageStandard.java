@@ -30,7 +30,10 @@ public class AverageStandard {
 			diffSum += diff[ i ];
 		}
 
-		System.out.println( "Standard Deviation: " + diffSum / numArray.length );
+		diffSum = Math.sqrt( diffSum / numArray.length );
+
+
+		System.out.println( "Standard Deviation: " + diffSum );
 
 	}
 
