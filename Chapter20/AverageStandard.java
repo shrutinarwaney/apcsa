@@ -18,8 +18,8 @@ public class AverageStandard {
 		}
 
 		double mean = 0;
-		for( int i = 0; i < numArray.length; i++ ) {
-			mean += numArray[ i ];
+		for( double i : numArray ) {
+			mean += i;
 		}
 		mean = mean / numArray.length;
 		System.out.println( "Mean is " + mean );
