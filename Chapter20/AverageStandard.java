@@ -6,7 +6,6 @@ public class AverageStandard {
 		
 		Scanner input = new Scanner( System.in );
 		System.out.print( "How many numbers: " );
-		// int num = input.nextInt();
 		double [] numArray = new double [ input.nextInt() ];
 		double [] diff = new double[ numArray.length ];
 
@@ -21,7 +20,7 @@ public class AverageStandard {
 		for( double i : numArray ) {
 			mean += i;
 		}
-		mean = mean / numArray.length;
+		mean = mean / ( double )numArray.length;
 		System.out.println( "Mean is " + mean );
 		double diffSum = 0;
 
@@ -30,7 +29,7 @@ public class AverageStandard {
 			diffSum += diff[ i ];
 		}
 
-		diffSum = Math.sqrt( diffSum / numArray.length );
+		diffSum = Math.sqrt( diffSum / ( double )numArray.length );
 
 
 		System.out.println( "Standard Deviation: " + diffSum );
