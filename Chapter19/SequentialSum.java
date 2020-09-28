@@ -9,7 +9,7 @@ public class SequentialSum {
 		System.out.print( "Enter N: " );
 		int n = input.nextInt();
 
-		int formulaSum = ( n * ( n + 1 ) / 2 );
+		int formulaSum = ( n * ( n + 1 ) / 2.0 );
 
 		int sum = 0;
 
