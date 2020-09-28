@@ -10,8 +10,8 @@ public class Mean {
 		System.out.print( "Enter Y: " );
 		double y = input.nextDouble();
 
-		System.out.println( "Arithmetic mean: " + ( x + y ) / 2 );
-		System.out.println( "Harmonic mean: " + 2 / ( ( 1 / x ) + ( 1 / y ) ) );
+		System.out.println( "Arithmetic mean: " + ( x + y ) / 2.0 );
+		System.out.println( "Harmonic mean: " + 2.0 / ( ( 1.0 / ( double )x ) + ( 1.0 / ( double )y ) ) );
 
 	}
 
