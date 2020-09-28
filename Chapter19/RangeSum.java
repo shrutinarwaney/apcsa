@@ -12,7 +12,7 @@ public class RangeSum {
 		int high = input.nextInt();
 
 
-		int formulaSum = ( high * ( high + 1 ) / 2 ) - ( low * ( low + 1 ) / 2 ) + low;
+		int formulaSum = ( high * ( high + 1.0 ) / 2.0 ) - ( low * ( low + 1.0 ) / 2.0 ) + low;
 
 		int sum = 0;
 
