@@ -14,8 +14,8 @@ public class MultiplicationQuiz {
 		int i = 0;
 
 		while( i < 10 ) {
-			num1 = rand.nextInt( 10 ) + 1;
-			num2 = rand.nextInt( 10 ) + 1;
+			num1 = rand.nextInt( 9 ) + 1;
+			num2 = rand.nextInt( 9 ) + 1;
 		
 			System.out.print( "What is " + num1 + " * " + num2 + "? " );
 			
