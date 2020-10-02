@@ -32,9 +32,10 @@ public class MonteCarlo {
 				diceOne = rand.nextInt( 6 ) + 1;
 				diceTwo = rand.nextInt( 6 ) + 1;
 
-				if( instantTurns > 4 ) { fourRolls++; }
 
 			} while( diceOne != 1 && diceTwo != 1 );
+
+			if( instantTurns > 4 ) { fourRolls++; }
 
 			i++;
 
