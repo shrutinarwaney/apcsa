@@ -3,7 +3,7 @@ import java.util.Random;
 
 public class MonteCarlo {
 
-	public static void main(String[] args) {
+	public static void main( String [] args v) {
 		
 		Scanner input = new Scanner( System.in );
 		Random rand = new Random();	
