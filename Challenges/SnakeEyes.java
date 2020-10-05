@@ -33,7 +33,7 @@ public class SnakeEyes {
 				diceTwo = rand.nextInt( 6 ) + 1;
 
 
-			} while( diceOne != 1 && diceTwo != 1 );
+			} while( !( diceOne == 1 && diceTwo == 1 ) );
 
 			if( instantTurns > 4 ) { fourRolls++; }
 
