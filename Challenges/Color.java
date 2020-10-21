@@ -23,6 +23,15 @@ public class Color {
 
 	}
 
+	public Color( String hex ) {
+		// include the # sign
+
+		red = Integer.parseInt( hex.substring( 1, 3 ), 16 );
+		green = Integer.parseInt( hex.substring( 3, 5 ), 16 );
+		blue = Integer.parseInt( hex.substring( 5 ), 16 );
+
+	}
+
 	public void setRed( int red ) { 
 		this.red = red; 
 		clampNum();

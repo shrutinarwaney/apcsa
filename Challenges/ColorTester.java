@@ -4,9 +4,11 @@ public class ColorTester {
 		
 		Color redIsh = new Color( 166, 131, 131 );
 		Color surpriseMe = new Color();
+		Color fave = new Color( "#efefef" );
 		
 		System.out.println( redIsh.display() );
 		System.out.println( surpriseMe.display() );
+		System.out.println( fave.display() );
 
 		redIsh.brighten( 30 );
 		surpriseMe.darken( 10 );
@@ -14,5 +16,6 @@ public class ColorTester {
 		System.out.println( redIsh.display() );
 		System.out.println( surpriseMe.display() );
 	}
+
 
 }
