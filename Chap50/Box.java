@@ -50,4 +50,8 @@ public class Box {
     public Box smallerBox( Box oldBox ) {
     	return new Box( 0.75 * oldBox.width(), 0.75 * oldBox.height(), 0.75 * oldBox.length() );
     }
+
+    public boolean nests( Box outsideBox ){
+        return ( outsideBox.width() > height && outsideBox.height() > height && outsideBox.length() > length );
+    }
 }
