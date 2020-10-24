@@ -15,13 +15,13 @@ public class Box {
 	}
 
 	public void setWidth( double width ) { this.width = width; }
-	public double getWidth() { return width; }
+	public double width() { return width; }
 
 	public void setHeight( double height ) { this.height = height; }
-	public double getHeight() { return height; }
+	public double height() { return height; }
 
 	public void setLength( double length ) { this.length = length; }
-	public double getLength() { return length; }
+	public double length() { return length; }
 
 	public double volume() {
 		return length * width * height;
