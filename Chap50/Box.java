@@ -43,4 +43,11 @@ public class Box {
         return 2 * faceArea() + 2 * sideArea() + 2 * topArea();
     }
 
+    public Box biggerBox( Box oldBox ) {
+    	return new Box( 1.25 * oldBox.width(), 1.25 * oldBox.height(), 1.25 * oldBox.length() );
+    }
+
+    public Box smallerBox( Box oldBox ) {
+    	return new Box( 0.75 * oldBox.width(), 0.75 * oldBox.height(), 0.75 * oldBox.length() );
+    }
 }
