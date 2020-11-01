@@ -8,7 +8,7 @@ public class ColorTester {
 		
 		System.out.println( redIsh );
 		System.out.println( surpriseMe );
-		System.out.println( fave.display() );
+		System.out.println( fave );
 
 		redIsh.brighten( 30 );
 		surpriseMe.darken( 10 );
