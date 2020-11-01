@@ -6,15 +6,15 @@ public class ColorTester {
 		Color surpriseMe = new Color();
 		Color fave = new Color( "#efefef" );
 		
-		System.out.println( redIsh.display() );
-		System.out.println( surpriseMe.display() );
+		System.out.println( redIsh );
+		System.out.println( surpriseMe );
 		System.out.println( fave.display() );
 
 		redIsh.brighten( 30 );
 		surpriseMe.darken( 10 );
 
-		System.out.println( redIsh.display() );
-		System.out.println( surpriseMe.display() );
+		System.out.println( redIsh );
+		System.out.println( surpriseMe );
 	}
 
 

@@ -66,7 +66,7 @@ public class Color {
 		clampNum();
 	}
 
-	public String display() {
+	public String toString() {
 		return "[" + red + ", " + green + ", " + blue + "]";
 	}
 
