@@ -37,18 +37,21 @@ public class Color {
 		clampNum();
 	}
 	public void setRed() { red = rand.nextInt( 256 ); }
+	public int getRed() { return red; }
 
 	public void setGreen( int green ) { 
 		this.green = green; 
 		clampNum();
 	}
 	public void setGreen() { green = rand.nextInt( 256 ); }
+	public int getGreen() { return green; }
 
 	public void setBlue( int blue ) { 
 		this.blue = blue;
 		clampNum();
 	}
 	public void setBlue() { blue = rand.nextInt( 256 ); }
+	public int getBlue() { return blue; }
 
 	public void brighten( double percent ) {
 		
