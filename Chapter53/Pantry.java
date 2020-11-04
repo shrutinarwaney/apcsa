@@ -64,4 +64,22 @@ class Pantry
   {
     selected . spread( oz ) ;
   }
+
+  public void replace( Jam j, int slot ) {
+
+    switch( slot ) {
+
+      case 1:
+        jar1 = j;
+        break;
+      case 2:
+        jar2 = j;
+        break;
+      case 3:
+        jar3 = j;
+        break;
+
+    }
+
+  }
 }
