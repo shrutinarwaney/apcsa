@@ -34,21 +34,21 @@ public class Color {
 
 	public void setRed( int red ) { 
 		this.red = red; 
-		clampNum();
+		clampNum( this.red );
 	}
 	public void setRed() { red = rand.nextInt( 256 ); }
 	public int getRed() { return red; }
 
 	public void setGreen( int green ) { 
 		this.green = green; 
-		clampNum();
+		clampNum( this.green );
 	}
 	public void setGreen() { green = rand.nextInt( 256 ); }
 	public int getGreen() { return green; }
 
 	public void setBlue( int blue ) { 
 		this.blue = blue;
-		clampNum();
+		clampNum( this.blue );
 	}
 	public void setBlue() { blue = rand.nextInt( 256 ); }
 	public int getBlue() { return blue; }
@@ -58,7 +58,9 @@ public class Color {
 		red *= ( 1 + ( ( double )percent / 100 ) );
 		green *= ( 1 + ( ( double )percent / 100 ) );
 		blue *= ( 1 + ( ( double )percent / 100 ) );
-		clampNum();
+		clampNum( red );
+		clampNum( green );
+		clampNum( blue );
 
 	}
 
@@ -66,20 +68,18 @@ public class Color {
 		red *= ( double )percent / 100;
 		green *= ( double )percent / 100;
 		blue *= ( double )percent / 100;
-		clampNum();
+		clampNum( red );
+		clampNum( green );
+		clampNum( blue );
 	}
 
 	public String toString() {
 		return "[" + red + ", " + green + ", " + blue + "]";
 	}
 
-	private void clampNum() {
-		if( red > 255 ) red = 255;
-		if( red < 0 ) red = 0;
-		if( green > 255 ) green = 255;
-		if( green < 0 ) red = 0;
-		if( blue > 255 ) blue = 255;
-		if( blue < 0 ) blue = 0; 
+	private void clampNum( int color ) {
+		if( color > 255 ) color = 255;
+		if( color < 0 ) color = 0;
 	}
 
 
