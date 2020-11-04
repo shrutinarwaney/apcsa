@@ -15,27 +15,48 @@ class Pantry
     selected = null ;
   }
 
+
+  Pantry( Jam jar1, Jam jar2 ) {
+    this . jar1 = jar1 ;
+    this . jar2 = jar2 ;
+    selected = null ;
+    jar3 = null ;
+  }
+
+  Pantry( Jam jar1 ) {
+    this . jar1 = jar1 ;
+    jar2 = null ;
+    jar3 = null ;
+    selected = null ;
+  }
+
   // Methods
   public String toString()
   {
     String str = "";
     str += "1: " +  jar1.toString()  + "\n";
-    str += "2: " +  jar2.toString()  + "\n";
-    str += "3: " +  jar3.toString()  + "\n";     
+    str += jar2 == null ? "" : "2: " +  jar2.toString()  + "\n";
+    str += jar3 == null ? "" : "3: " +  jar3.toString()  + "\n";     
     return str;
   }
 
   // assume that the user entered a correct selection, 1, 2, or 3
-  public void select( int jarNumber )
+  public boolean select( int jarNumber )
   {
-    if ( jarNumber == 1 )
+    if ( jarNumber == 1 ) {
       selected =  jar1 ;
+      return jar1 != null;
+    }
 
-    else if ( jarNumber == 2 )
-      selected = jar2 ;
+    else if ( jarNumber == 2 ) {
+      selected =  jar2 ;
+      return jar2 != null;
+    }
 
-    else 
-      selected = jar3 ;
+    else  {
+      selected =  jar3 ;
+      return jar3 != null;
+    }
   }
 
   // spread the selected jam
