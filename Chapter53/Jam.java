@@ -44,4 +44,9 @@ class Jam
        System.out.println("No jam in the Jar!");
   }
 
+  public int getCapacity() {
+    return capacity;
+  }
+  public String getDate() { return date; }
+
 }

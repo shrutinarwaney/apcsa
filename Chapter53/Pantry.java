@@ -82,4 +82,18 @@ class Pantry
     }
 
   }
+
+  public void mixedFruit() {
+
+    if( jar1.getCapacity() <= 2 && jar2.getCapacity() <= 2 && jar3.getCapacity() <= 2 ) {
+
+      
+      jar1 = new Jam( "Mixed Fruit", jar1.getDate(), jar1.getCapacity() + jar2.getCapacity() + jar3.getCapacity() );
+      jar2 = null;
+      jar3 = null;
+
+    }
+
+  }
+
 }
