@@ -6,15 +6,15 @@ public class Odious {
 		
 		Scanner input = new Scanner( System.in );
 		System.out.println( "Enter a nonnegative integer: " );
-		int value = input.nextInt();
+		long value = input.nextLong();
 
 		System.out.println( value + " is " + ( isOdious( value ) ? "odious" : "evil" ) );
 
 	}
 
-	public static boolean isOdious( int value ) {
+	public static boolean isOdious( long value ) {
 
-		int total = 1;
+		long total = 1;
 		while( value / 2 != 0 ) {
 			total += ( value % 2 );
 			value /= 2;
