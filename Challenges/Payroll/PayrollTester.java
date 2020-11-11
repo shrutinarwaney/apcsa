@@ -7,6 +7,8 @@ public class PayrollTester {
 		johnDoe.work( 8 );
 		johnDoe.work( 10 );
 
+		System.out.println( johnDoe );
+
 		System.out.println( johnDoe.getCurrentHrs() );
 		System.out.println( johnDoe.getTotalHrs() );
 
@@ -28,6 +30,9 @@ public class PayrollTester {
 
 		System.out.println( secondPaycheck );
 
+		Employee tk = new Employee( "TK Kim", ":P", 1.0 );
+
+		System.out.println( tk );
 
 
 	}

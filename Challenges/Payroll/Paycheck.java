@@ -27,11 +27,11 @@ public class Paycheck {
 		
 	}
 
-	public Employee getEmployee() { return Employee; }
+	public Employee getEmployee() { return current; }
 
 
 	public String toString() {
-		return current.getName() + " was paid " + amountPayed;
+		return current.getName() + " was paid " + amountPayed + " after working " + currentHrs + " hours with a wage of $" + wage;
 	}
 
 }

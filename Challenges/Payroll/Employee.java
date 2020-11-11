@@ -3,7 +3,7 @@ public class Employee {
 	private String name;
 	private String position;
 	private double wage;
-	private  int id;
+	private int id;
 	private int currentHrs;
 	private int totalHrs;
 	private Paycheck pc;
@@ -53,7 +53,7 @@ public class Employee {
 	}
 
 	public String toString() {
-		return "Name: " + name + "\nPosition: " + position;
+		return "Name: " + name + "\nPosition: " + position + "\nID: " + id;
 	}
 	
 
