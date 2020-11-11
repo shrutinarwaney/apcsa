@@ -10,14 +10,28 @@ public class Paycheck {
 		this.current = current;
 		this.currentHrs = current.getCurrentHrs();
 		this.wage = current.getWage();
-		this.amountPayed = 0.85 * ( wage * currentHrs );
 
 		if( currentHrs > 100 || amountPayed > 1500 ) erroneous = true;
 		else erroneous = false;
+
+		if( erroneous ) amountPayed = 0;
+		else {
+			this.amountPayed = 0.85 * ( wage * currentHrs );
+		}
 	}
 
+	public void setEmployee( Employee current ) {
+		this.current = current;
+		this.currentHrs = current.getCurrentHrs();
+		this.wage = current.getWage();
+		
+	}
+
+	public Employee getEmployee() { return Employee; }
+
+
 	public String toString() {
-		return String.format(  )
+		return current.getName() + " was paid " + amountPayed;
 	}
 
 }

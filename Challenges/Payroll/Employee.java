@@ -3,19 +3,19 @@ public class Employee {
 	private String name;
 	private String position;
 	private double wage;
-	private int id;
+	private  int id;
 	private int currentHrs;
 	private int totalHrs;
 	private Paycheck pc;
+	private static int employeeCount = 0;
 
-	public Employee( String name, String position, double wage, int id, int currentHrs, int totalHrs ) {
+	public Employee( String name, String position, double wage ) {
 
 		this.name = name;
 		this.position = position;
 		this.wage = wage;
-		this.id = id;
-		this.currentHrs = currentHrs;
-		this.totalHrs = totalHrs;
+		this.id = employeeCount;
+		employeeCount++;
 
 	}
 
@@ -51,5 +51,10 @@ public class Employee {
 		return pc;
 
 	}
+
+	public String toString() {
+		return "Name: " + name + "\nPosition: " + position;
+	}
+	
 
 }
