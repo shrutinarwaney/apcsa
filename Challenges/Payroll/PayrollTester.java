@@ -30,6 +30,12 @@ public class PayrollTester {
 
 		System.out.println( secondPaycheck );
 
+		johnDoe.work( 10000000 );
+
+		Paycheck thirdPaycheck = johnDoe.requestPaycheck();
+
+		System.out.println( thirdPaycheck );
+
 		Employee tk = new Employee( "TK Kim", ":P", 1.0 );
 
 		System.out.println( tk );
