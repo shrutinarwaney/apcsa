@@ -16,7 +16,7 @@ public class LunchAccount {
 	}
 
 	public LunchAccount( int balance ) {
-		addMoney();
+		addMoney( balance );
 		this.studentID = 1000 + studentIDCount;
 		studentIDCount++; 
 	}
