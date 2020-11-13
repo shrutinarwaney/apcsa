@@ -40,7 +40,9 @@ public class LunchAccount {
 
 	public void purchase( double costOfMeal ) {
 		if( canPurchase( costOfMeal ) ) {
-
+			balance -= costOfMeal;
+			numberOfMeals++;
+			totalSpentOnLunches += costOfMeal;
 		}
 	}
 
