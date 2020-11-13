@@ -4,7 +4,7 @@ public class LunchAccount {
 	private static int studentsWhoAddedMoney = 0;
 	private int studentID;
 	private static int studentIDCount = 0;
-	private int timesMoneyAdded = 0; //Make sure each student can get $20 only once
+	private boolean moneyAdded = false;
 	private int numberOfMeals = 0;
 	private double totalSpentOnLunches;
 
@@ -16,12 +16,7 @@ public class LunchAccount {
 	}
 
 	public LunchAccount( int balance ) {
-		this.balance = balance;
-		if( studentsWhoAddedMoney <= 100 && timesMoneyAdded == 0 ) { 
-			this.balance += 20;
-			studentsWhoAddedMoney++;
-		}
-		timesMoneyAdded++;
+		addMoney();
 		this.studentID = 1000 + studentIDCount;
 		studentIDCount++; 
 	}
@@ -31,11 +26,11 @@ public class LunchAccount {
 
 	public void addMoney( int moneyAdd ) {
 		this.balance += moneyAdd;
-		if( studentsWhoAddedMoney <= 100 && timesMoneyAdded == 0 ) { 
+		if( studentsWhoAddedMoney <= 100 && !moneyAdded ) { 
 			this.balance += 20;
-			studentsWhoAddedMoney++; //inside if because first 100 students, not 100 purchases
+			studentsWhoAddedMoney++;
+			moneyAdded = true;
 		}
-		timesMoneyAdded++;
 	}
 
 	public void purchase( double costOfMeal ) {
