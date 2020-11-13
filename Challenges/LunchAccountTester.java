@@ -27,6 +27,15 @@ public class LunchAccountTester {
 		System.out.println( sally );
 		System.out.println( cheater );
 
+		LunchAccount[] testingPast100 = new LunchAccount[ 200 ];
+
+		for( int i = 0; i < testingPast100.length; i++ ) {
+			testingPast100[ i ] = new LunchAccount( 10.50 );
+		}
+
+		System.out.println( testingPast100[ 105 ] ); //#1108, should be $10.50
+		System.out.println( testingPast100[ 33 ] );  //#1036, should be $30.5
+
 	}
 
 }
