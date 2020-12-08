@@ -32,11 +32,11 @@ public class Task implements Serializable {
 	public void setGenre( String genre ) { this.genre = genre; }
 	public String getGenre() { return genre; }
 
-	public void setReleaseDate( int m, int d, int y ) {
-		releaseDate.setDate( m, d, y );
+	public void setDueDate( int m, int d, int y ) {
+		dueDate.setDate( m, d, y );
 	}
-	public String getReleaseDate() {
-		 return releaseDate.getDate();
+	public String getDueDate() {
+		 return dueDate.getDate();
 	}
 
 }
