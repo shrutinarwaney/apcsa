@@ -10,8 +10,10 @@
 
  		Scanner userInput = new Scanner( System.in );
  		TreeMap< Integer, Task > taskList;
- 		BufferedReader in;
+ 		ObjectInputStream in;
+ 		ObjectOutputSteam outObj;
  		PrintWriter out;
+
 
  		try {
  			
@@ -24,7 +26,12 @@
 
  			while( true ) {
 
- 				System.out.print( "\n" )
+ 				System.out.print( "\nEnter 1 to add a task, 2 to modify a task, and 3 to clear the list" );
+ 				int menuOption = userInput.nextInt();
+
+ 				switch( menuOption ) {
+ 					case
+ 				}
 
  			}
  		}
