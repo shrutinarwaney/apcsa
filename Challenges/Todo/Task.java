@@ -26,11 +26,11 @@ public class Task implements Serializable {
 	public void setDescription( String description ) { this.description = description; }
 	public String getDescription() { return description; }
 
-	public void setArtist( String artist ) { this.artist = artist; }
-	public String getArtist() { return artist; }
+	public void setDone( boolean done ) { this.done = done; }
+	public boolean getDone() { return done; }
 
-	public void setGenre( String genre ) { this.genre = genre; }
-	public String getGenre() { return genre; }
+	public void setPriority( int priority ) { this.priority = priority; }
+	public int getPriority() { return priority; }
 
 	public void setDueDate( int m, int d, int y ) {
 		dueDate.setDate( m, d, y );
