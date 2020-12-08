@@ -1,4 +1,4 @@
-public class Task {
+public class Task implements Serializable {
 	
 	String description;
 	boolean done;
