@@ -13,9 +13,9 @@
 		Date dueDate;
 		String removeDescription;
 
-		int m = 0;
-		int d = 0;
-		int y = 0;
+		int m;
+		int d;
+		int y;
 
  		Scanner userInput = new Scanner( System.in );
  		TreeMap< String, Task > taskList;
@@ -48,8 +48,8 @@
 						}
  				}
 
- 				System.out.print( "\nEnter 1 to add a task, 2 to remove a task, 3 to modify a task, and 4 to clear the list" );
- 				int menuOption = userInput.nextInt();
+ 				System.out.print( "\nEnter 1 to add a task, 2 to remove a task, 3 to modify a task, and 4 to clear the list " );
+ 				int menuOption = Integer.parseInt( userInput.nextLine() );
 
  				switch( menuOption ) {
  				
@@ -73,14 +73,14 @@
  						}
 
  						System.out.print( "\nWhat is the priority? " );
-						priority = userInput.nextInt();
+						priority = Integer.parseInt( userInput.nextLine() );
 
  						System.out.print( "\nWhat is the due date year? (####) " );
-						y = userInput.nextInt();
+						y = Integer.parseInt( userInput.nextLine() );
 						System.out.print( "\nWhat is the due date month? " );
-						m = userInput.nextInt();
+						m = Integer.parseInt( userInput.nextLine() );
 						System.out.print( "\nWhat due date day? " );
-						d = userInput.nextInt();
+						d = Integer.parseInt( userInput.nextLine() );
 
 						Task newTask = new Task( description, done, priority, m, d, y );
 						taskList.put( newTask.getDescription(), newTask );
@@ -138,14 +138,14 @@
  						}
 
  						System.out.print( "\nWhat is the priority? " );
-						priority = userInput.nextInt();
+						priority = Integer.parseInt( userInput.nextLine() );
 
  						System.out.print( "\nWhat is the due date year? (####) " );
-						y = userInput.nextInt();
+						y = Integer.parseInt( userInput.nextLine() );
 						System.out.print( "\nWhat is the due date month? " );
-						m = userInput.nextInt();
+						m = Integer.parseInt( userInput.nextLine() );
 						System.out.print( "\nWhat due date day? " );
-						d = userInput.nextInt();
+						d = Integer.parseInt( userInput.nextLine() );
 
 						newTask = new Task( description, done, priority, m, d, y );
 						taskList.put( newTask.getDescription(), newTask );
@@ -159,7 +159,7 @@
  				}
 
  				System.out.print( "\nPlease enter 1 if you would like to continue modifying this list, and 2 if you would like to quit: " );
-				switch( userInput.nextInt() ) {
+				switch( Integer.parseInt( userInput.nextLine() ) ) {
 					case 1: 
 						break;
 					case 2:
