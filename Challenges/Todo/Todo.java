@@ -90,6 +90,59 @@
 						taskList.remove( removeDescription );
 
  						break;
+
+ 					case 3:
+ 						System.out.print( "Please enter the description of the task you would like to modify: " );
+ 						removeDescription = input.nextLine();
+
+ 						if( removeDescription.length() > descriptionLength ) {
+							throw new IllegalArgumentException();
+						}
+
+						while( removeDescription.length() < descriptionLength ) {
+							removeDescription = removeDescription + " ";
+						}
+
+						taskList.remove( removeDescription );
+
+
+						
+						System.out.print( "Please enter the description of the task you would like to add: " )
+ 						description = input.nextLine();
+
+ 						if( description.length() > descriptionLength ) {
+ 							throw new IllegalArgumentException();
+ 						}
+ 						while( description.length() < descriptionLength ) {
+ 							description += " ";
+ 						}
+
+ 						System.out.print( "Is this task done? (yes/no)" );
+ 						if( userInput.nextLine().equals( "yes" ) ) {
+ 							done = true;
+ 						}
+ 						else {
+ 							done = false;
+ 						}
+
+ 						System.out.print( "\nWhat is the priority? " );
+						priority = userInput.nextInt();
+
+ 						System.out.print( "\nWhat is the due date year? (####) " );
+						y = userInput.nextInt();
+						System.out.print( "\nWhat is the due date month? " );
+						m = userInput.nextInt();
+						System.out.print( "\nWhat due date day? " );
+						d = userInput.nextInt();
+
+						Task newTask = new Task( description, done, priority, m, d, y );
+						taskList.put( newTask.getDescription(), newTask );
+
+ 						break;
+
+ 					case 4:
+ 						taskList.clear();
+ 						break;
  				
  				}
 
@@ -107,10 +160,6 @@
 		catch( ClassNotFoundException exe ) {
 			System.out.println( "Error" );
 		}
-
- 	}
-
- 	public static void display( Task currentTask ) {
 
  	}
 
