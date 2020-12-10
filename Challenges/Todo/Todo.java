@@ -20,7 +20,7 @@
  		Scanner userInput = new Scanner( System.in );
  		TreeMap< String, Task > taskList;
  		ObjectInputStream in;
- 		ObjectOutputSteam out;
+ 		ObjectOutputStream out = null;
 
  		final int descriptionLength = 50;
 
@@ -28,6 +28,10 @@
  			
  			System.out.println( "What is the name of your data file that has your todo list? (include .dat) " );
  			String fileName = userInput.nextLine();
+
+ 			out = new ObjectOutputStream(
+			 new BufferedOutputStream(
+			 new FileOutputStream( "listOfTasks.dat" ) ));
 
  			in = new ObjectInputStream( new BufferedInputStream( new FileInputStream( fileName ) ) );
 
@@ -50,8 +54,8 @@
  				switch( menuOption ) {
  				
  					case 1:
- 						System.out.print( "Please enter the description of the task you would like to add: " )
- 						description = input.nextLine();
+ 						System.out.print( "Please enter the description of the task you would like to add: " );
+ 						description = userInput.nextLine();
 
  						if( description.length() > descriptionLength ) {
  							throw new IllegalArgumentException();
@@ -85,7 +89,7 @@
 
  					case 2:
  						System.out.print( "Please enter the description of the task you would like to remove: " );
- 						removeDescription = input.nextLine();
+ 						removeDescription = userInput.nextLine();
 
  						if( removeDescription.length() > descriptionLength ) {
 							throw new IllegalArgumentException();
@@ -101,7 +105,7 @@
 
  					case 3:
  						System.out.print( "Please enter the description of the task you would like to modify: " );
- 						removeDescription = input.nextLine();
+ 						removeDescription = userInput.nextLine();
 
  						if( removeDescription.length() > descriptionLength ) {
 							throw new IllegalArgumentException();
@@ -115,8 +119,8 @@
 
 
 						
-						System.out.print( "Please enter the description of the task you would like to add: " )
- 						description = input.nextLine();
+						System.out.print( "Please enter the description of the task you would like to add: " );
+ 						description = userInput.nextLine();
 
  						if( description.length() > descriptionLength ) {
  							throw new IllegalArgumentException();
@@ -143,7 +147,7 @@
 						System.out.print( "\nWhat due date day? " );
 						d = userInput.nextInt();
 
-						Task newTask = new Task( description, done, priority, m, d, y );
+						newTask = new Task( description, done, priority, m, d, y );
 						taskList.put( newTask.getDescription(), newTask );
 
  						break;
@@ -157,25 +161,24 @@
  				System.out.print( "\nPlease enter 1 if you would like to continue modifying this list, and 2 if you would like to quit: " );
 				switch( userInput.nextInt() ) {
 					case 1: 
-						moreInput = true;
 						break;
 					case 2:
-						moreInput = false;
 						out.writeObject( taskList );
 						System.exit(0);
 						break;
 
  			}
  		}
+ 	}
 
  		catch( IOException e ) {
-			System.out.println( "Error" );
+			System.out.println( "Error IOException" );
 		}
 		catch( IllegalArgumentException ex ) {
 			System.out.println( "Entry must be " + descriptionLength + " or less characters" );
 		}
 		catch( ClassNotFoundException exe ) {
-			System.out.println( "Error" );
+			System.out.println( "Error ClassNotFoundException" );
 		}
 
  	}
