@@ -26,7 +26,7 @@
 
  		try {
  			
- 			System.out.println( "What is the name of your data file that has your todo list? (include .dat) " );
+ 			System.out.println( "\nWhat is the name of your data file that has your todo list? (include .dat) " );
  			String fileName = userInput.nextLine();
 
  			out = new ObjectOutputStream(
@@ -54,7 +54,7 @@
  				switch( menuOption ) {
  				
  					case 1:
- 						System.out.print( "Please enter the description of the task you would like to add: " );
+ 						System.out.print( "\nPlease enter the description of the task you would like to add: " );
  						description = userInput.nextLine();
 
  						if( description.length() > descriptionLength ) {

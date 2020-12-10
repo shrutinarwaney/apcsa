@@ -22,7 +22,7 @@ public class Task implements Serializable {
 		this.description = description;
 		this.done = done;
 		this.priority = priority;
-		dueDate.setDate( m, d, y );
+		dueDate = new Date( m, d, y );
 
 	}
 
