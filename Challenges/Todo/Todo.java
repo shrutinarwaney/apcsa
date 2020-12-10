@@ -20,8 +20,7 @@
  		Scanner userInput = new Scanner( System.in );
  		TreeMap< String, Task > taskList;
  		ObjectInputStream in;
- 		ObjectOutputSteam outObj;
- 		PrintWriter out;
+ 		ObjectOutputSteam out;
 
  		final int descriptionLength = 50;
 
@@ -35,6 +34,15 @@
  			taskList = (TreeMap) in.readObject();
 
  			while( true ) {
+
+ 				for( int i = 1; i <= 5; i++ ) {
+ 					for( Map.Entry currentTask : taskList.entrySet() ) {
+							Task t = (Task) currentTask.getValue();
+							if( t.getPriority() == i ) {	
+								display( t );
+							}
+						}
+ 				}
 
  				System.out.print( "\nEnter 1 to add a task, 2 to remove a task, 3 to modify a task, and 4 to clear the list" );
  				int menuOption = userInput.nextInt();
@@ -146,7 +154,16 @@
  				
  				}
 
-
+ 				System.out.print( "\nPlease enter 1 if you would like to continue modifying this list, and 2 if you would like to quit: " );
+				switch( userInput.nextInt() ) {
+					case 1: 
+						moreInput = true;
+						break;
+					case 2:
+						moreInput = false;
+						out.writeObject( taskList );
+						System.exit(0);
+						break;
 
  			}
  		}
@@ -162,5 +179,11 @@
 		}
 
  	}
+
+ 	public static void display( Task t ) {
+
+		System.out.printf( "%-30s %-30s %-30s %-30s\n", t.getDescription(), t.getDone(), t.getPriority(), t.getDueDate() );
+
+	}
 
  }
