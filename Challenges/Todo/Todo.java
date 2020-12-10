@@ -11,13 +11,14 @@
 		boolean done;
 		int priority;
 		Date dueDate;
+		String removeDescription;
 
 		int m = 0;
 		int d = 0;
 		int y = 0;
 
  		Scanner userInput = new Scanner( System.in );
- 		TreeMap< Integer, Task > taskList;
+ 		TreeMap< String, Task > taskList;
  		ObjectInputStream in;
  		ObjectOutputSteam outObj;
  		PrintWriter out;
@@ -35,7 +36,7 @@
 
  			while( true ) {
 
- 				System.out.print( "\nEnter 1 to add a task, 2 to modify a task, and 3 to clear the list" );
+ 				System.out.print( "\nEnter 1 to add a task, 2 to remove a task, 3 to modify a task, and 4 to clear the list" );
  				int menuOption = userInput.nextInt();
 
  				switch( menuOption ) {
@@ -70,12 +71,25 @@
 						d = userInput.nextInt();
 
 						Task newTask = new Task( description, done, priority, m, d, y );
-						taskList.put( newTask.getPriority(), newTask );
+						taskList.put( newTask.getDescription(), newTask );
 
  						break;
 
  					case 2:
- 						System.out.print( "Enter 1 to " )
+ 						System.out.print( "Please enter the description of the task you would like to remove: " );
+ 						removeDescription = input.nextLine();
+
+ 						if( removeDescription.length() > descriptionLength ) {
+							throw new IllegalArgumentException();
+						}
+
+						while( removeDescription.length() < descriptionLength ) {
+							removeDescription = removeDescription + " ";
+						}
+
+						taskList.remove( removeDescription );
+
+ 						break;
  				
  				}
 
