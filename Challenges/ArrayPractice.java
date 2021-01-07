@@ -30,11 +30,19 @@ public class ArrayPractice {
 
 		System.out.println( "\n" );
 
+		System.out.println( "search" );
+		System.out.println( search( ogData, 1010 ) );
+
+		System.out.println( "\n" );
+
+		System.out.println( "sort" );
+		display( sort( ogData ) );
+
 	}
 
 	public static int[] swapEnds( int[] data ) {
 
-		temp = data[ 0 ]; 
+		int temp = data[ 0 ]; 
 		data[ 0 ] = data[ data.length - 1 ];
 		data[ data.length - 1 ] = temp;
 		return data;
@@ -75,6 +83,38 @@ public class ArrayPractice {
 		for( int n : data ) {
 			System.out.print( n + ", ");
 		}
+		System.out.println();
+	}
+
+	public static int search( int[] haystack, int needle ) {
+		for( int i = 0; i < haystack.length; i++ ) {
+			if( needle == haystack[ i ] ) {
+				return i;
+			}
+		}
+		return -1;
+	}
+
+	public static int[] sort( int[] data ) {
+
+		int temp;
+
+		for( int i = 0; i < data.length; i++ ) {
+
+			for ( int j = i + 1; j < data.length; j++ ) {
+				
+				if( data[ i ] > data[ j ] ) {
+					temp = data[ i ];
+					data[ i ] = data[ j ];
+					data[ j ] = temp;
+				}
+
+			}
+
+		}
+
+		return data;
+
 	}
 
 }
