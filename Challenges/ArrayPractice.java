@@ -34,14 +34,10 @@ public class ArrayPractice {
 
 	public static int[] swapEnds( int[] data ) {
 
-		int[] newArray = new int[ data.length ];
-		newArray[ 0 ] = data[ data.length - 1 ];
-		newArray[ newArray.length - 1 ] = data[ 0 ];
-		for( int i = 1; i < data.length - 1; i++ ) {
-			newArray[ i ] = data[ i ];
-		}
-
-		return newArray;
+		temp = data[ 0 ]; 
+		data[ 0 ] = data[ data.length - 1 ];
+		data[ data.length - 1 ] = temp;
+		return data;
 
 	}
 
