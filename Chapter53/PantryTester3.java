@@ -9,12 +9,19 @@ public class PantryTester3
     Pantry hubbard = new Pantry( goose, apple );
     System.out.println( hubbard );
 
-    if ( hubbard.select(1) )
+    if ( hubbard.select(3) )
       hubbard.spread(2);
     else
       System.out.println("Selection not available");
     System.out.println( hubbard );
 
+    hubbard.replace( rhub, 3 );
+    System.out.println( hubbard );
+
+    if ( hubbard.select(3) )
+      hubbard.spread(2);
+    else
+      System.out.println("Selection not available");
     System.out.println( hubbard );
     
   }
